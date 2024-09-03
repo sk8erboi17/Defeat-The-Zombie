@@ -13,6 +13,17 @@
 
 Check out a demo of the game here: [Game Demo](https://youtu.be/o1mvx0d7RqU)
 
+
+## How to Start the Game
+1. **Clone the Repository:**
+   Make sure you have a local copy of the repository. If you haven’t already, clone it using:
+   ```bash
+   git clone https://github.com/sk8erboi17/Defeat-The-Zombie.git
+   ```
+2. Open with a IDE for Java the game-server (if server is off, the clients can't connect)
+3. Now you can launch the main.py in the gui-client and play with friends!
+4. (Optional) If you want see the logs and stats, you need start the console-website with ngix(or similar)
+
 ## Done
 <div align="left">
 <p>✅ <strong>Player Controls</strong>: Move left, right, jump, and attack with  weapon.</p>
