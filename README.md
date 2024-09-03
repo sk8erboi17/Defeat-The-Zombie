@@ -20,7 +20,7 @@ Check out a demo of the game here: [Game Demo](https://youtu.be/o1mvx0d7RqU)
    ```bash
    git clone https://github.com/sk8erboi17/Defeat-The-Zombie.git
    ```
-2. Open with a IDE for Java the game-server (if server is off, the clients can't connect)
+2. Open with a IDE for Java the game-server and start the server (if server is off, the clients can't connect)
 3. Now you can launch the main.py in the gui-client and play with friends!
 4. (Optional) If you want see the logs and stats, you need start the console-website with ngix(or similar)
 
