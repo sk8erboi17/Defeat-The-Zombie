@@ -1,0 +1,1 @@
+#Ogni pacchetto ha un file __init__.py che serve a python la struttura e la gerarchia dei pacchetti
