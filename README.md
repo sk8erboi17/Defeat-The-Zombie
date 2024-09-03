@@ -4,7 +4,7 @@
 <h1> Defeat-The-Zombie </h1>
 </div>
 
-## "Defeat-The-Zombie" is an game where players battle against zombies. The game features multiplayer interactions.
+## Defeat The Zombie is an game where players battle against zombies. The game features multiplayer interactions.
 
 ### Sample of the Game
 <p>A screenshot from the tester (me) =)</p>
