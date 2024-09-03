@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Giuseppe Perrotta">
+        <title>Game Panel</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+       
+        <header>
+            <h1>Game Panel</h1>
+        </header>
+        <main>
+            <section class="console">
+                <div class="header-console">
+                    <h2>Console</h2>
+                </div>
+                
+                <div class="console-box"></div>
+                <div class="input-box">
+                    <input type="text" class="text-area" id="message" placeholder="Insert a command">
+                    <button class="send">Send</button>
+                  </div>  
+            </section>
+
+            <section class="stats">
+                
+                <div class="test">
+                    <p class="p-stats">SERVER STATS</p>
+                </div>
+
+                <div class="player">
+                    <img class="user-img" src="images/users.png">
+                    <p class="users" id="usersId">Online: NaN/NaN</p>
+                </div>
+
+                <div class="entity">
+                    <img class="user-img" src="images/users.png">
+                    <p class="users" id="entitiesId">Entity: NaN/NaN</p>
+                </div>   
+            </section>
+    
+        </main>
+    </body>
+
+    <script>
+        const socket = new WebSocket("ws://localhost:8080/websocket");
+        const consoleBox = document.querySelector('.console-box');
+        const button = document.querySelector('.send');
+        const textBox = document.getElementById('message'); 
+        const onlines = document.getElementById('usersId');
+        const entities = document.getElementById('entitiesId');
+        
+
+        //open websocket from server
+        socket.onopen = function(event) {
+            console.log("WebSocket connection established.");
+        };
+        
+        //append the text into the box
+        socket.onmessage = function(event) {
+            const messageData = event.data;
+            const message = document.createElement("p");
+            message.textContent = messageData;
+            consoleBox.appendChild(message);
+            console.log("Received message:", messageData);
+        };
+        
+        //message on error
+        socket.onerror = function(error) {
+            console.error("WebSocket error: ", error);
+        };
+        
+        //message on close
+        socket.onclose = function(event) {
+            console.log("WebSocket connection closed:", event);
+        };
+        
+        //TODO - Send message  when click button 
+        button.addEventListener("click", (event) =>{
+            console.log(JSON.stringify( textBox.value))
+            sendMessage(textBox.value);
+        });
+        
+        //receive data from the REST-API for the online stats
+
+        fetch("http://localhost:8080/game/v1/api/online").then(response =>{
+            if(!response.ok) {
+                throw new Error('Network response was not ok'); 
+            }
+            return response.json();
+        }).then(data => {
+            onlines.textContent = "Online: " + data;
+        });
+
+        //receive data from the REST-API for the entities stats
+        fetch("http://localhost:8080/game/v1/api/entities").then(response =>{
+            if(!response.ok) {
+                throw new Error('Network response was not ok'); 
+            }
+            return response.json();
+        }).then(data => {
+            entities.textContent = "Entities: " + data;
+        });
+      </script>
+</html>

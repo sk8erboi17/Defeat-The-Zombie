@@ -1,0 +1,169 @@
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    background-image: url('images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 120vh;
+    overflow-x: hidden;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-family: PlusJakartaSans, -apple-system, BlinkMacSystemFont, Segoe UI,Roboto, Oxygen, Cantarell, Helvetica Neue, Ubuntu, sans-serif;
+    border-radius: 10px;
+    width: 50%;
+    color: white;
+    background-color: color-mix(in srgb, rgba(0, 0, 0, 0.2) 30%, rgba(148, 45, 239, 0.408));
+    opacity: 4;
+}
+
+h2 {
+    font-family: PlusJakartaSans, -apple-system, BlinkMacSystemFont, Segoe UI,Roboto, Oxygen, Cantarell, Helvetica Neue, Ubuntu, sans-serif;
+    font-size: 16px;
+    color: white;
+}
+
+.header-console {
+    width: 100%;
+    height: 20px;
+    background-image: linear-gradient(to right, #482e8f, #4a147f);
+    box-shadow: 0 0.5rem 1rem rgba(143, 142, 142, 0.15) !important;
+
+}
+
+.console {
+    
+    position: relative;
+    height: 550px;
+    width: 75%;
+    background-image: url('images/kali.png');
+    background-blend-mode: darken, luminosity;
+    background-repeat: no-repeat;
+    border-color: white;
+    background-position: center;
+    opacity: 0.7;
+    background-color:rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0.5rem 1rem rgba(143, 142, 142, 0.15) !important;
+
+}
+
+.console-box{
+    position: relative;
+    top: 0;
+    max-height: 480px;
+    filter: none;
+    overflow-y: auto; /* Aggiungi la scrollbar verticale se necessario */
+    overflow-x: hidden;
+}
+
+
+.input-box {
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    display: flex; 
+    width: 100%; 
+    box-sizing: border-box; 
+    height: 40px; 
+}
+
+.text-area {
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0, 0, 0, 0.3);
+    border-color: rgba(0, 0, 0, 0.3);
+    resize: none;
+    border: black solid 0.5px; 
+
+}
+.send{
+    width: 5%;
+    height: 100%;    
+    border-color: black;
+    background-color: rgba(94, 7, 131, 0.5);
+    opacity: 0.5;
+    color: white;
+    border: none;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+}
+input {
+    color: white;
+}
+
+input::selection {
+    border-color: black;
+    box-sizing: content-box;
+}
+
+.p-stats {
+    font-size: 24px;
+    font-family: PlusJakartaSans, -apple-system, BlinkMacSystemFont, Segoe UI,Roboto, Oxygen, Cantarell, Helvetica Neue, Ubuntu, sans-serif;
+
+}
+.test {
+    position: absolute;
+    top: 90vh;
+}
+.stats {
+    background-color:rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: row;
+    /* 
+        Le proprietà align-self e justify-self permettono di specificare l'allineamento
+        di un singolo elemento all'interno di un contenitore flex (o grid),
+        sovrascrivendo l'allineamento generale definito dal contenitore padre (main in questo caso)
+    */
+    align-self: center; /* Assicurati che si allinei all'inizio dell'asse principale */
+    justify-self: flex-start; /* Assicurati che si allinei all'inizio dell'asse trasversale */
+    margin-top: 4vh;
+    
+}
+
+.player {
+    margin: 40px;
+}
+.entity {
+    margin: 40px;
+}
+.users {
+    font-size: 24px;
+}
+
+.user-img { 
+    width: 52px;
+    height: 52px;
+}
+
+p {
+    padding: 10px;
+    color: white;
+}
