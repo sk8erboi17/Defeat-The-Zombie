@@ -9,7 +9,7 @@
 ### Sample of the Game
 <p>A screenshot from the tester (me) =)</p>
 
-![alt text](https://ibb.co/w780jX6)
+![alt text](https://i.ibb.co/qChyVf1/Game.png)
 
 Check out a demo of the game here: [Game Demo](https://youtu.be/o1mvx0d7RqU)
 
